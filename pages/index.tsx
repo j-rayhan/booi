@@ -1,29 +1,30 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { faSearch, faBook, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faList, faTags, faComment, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   const [active, setActive] = React.useState<boolean>(false);
   const [searchFormVisible, setSearchFormVisible] = React.useState<boolean>(false);
-    const toggleActive = () => {
-        const scrolled = document.documentElement.scrollTop;
-        if (scrolled > 80) {
-          setActive(true);
-        } else if (scrolled <= 80) {
-          setActive(false);
-        }
-    };
-  React.useLayoutEffect(() => {
-    const subscribe =  window.addEventListener('scroll', toggleActive);
+  const toggleActive = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 80) {
+      setActive(true);
+    } else if (scrolled <= 80) {
+      setActive(false);
+    }
+  };
+  React.useEffect(() => {
+    const subscribe = window.addEventListener('scroll', toggleActive);
     return () => subscribe;
   })
   const handleSearchFormVisible = () => setSearchFormVisible(!searchFormVisible);
 
   return (
     <div className={styles.container}>
+      {/* Header section */}
       <header className={styles.header}>
         <div className={styles.headerOne}>
 
@@ -54,7 +55,15 @@ const Home: NextPage = () => {
         </div>
 
       </header>
+      {/* <!-- bottom navbar  --> */}
 
+      <nav className={styles.bottomNavbar}>
+        <a href="#home"><FontAwesomeIcon icon={faHome} /></a>
+        <a href="#featured" ><FontAwesomeIcon icon={faList} /></a>
+        <a href="#arrivals" ><FontAwesomeIcon icon={faTags} /></a>
+        <a href="#reviews"><FontAwesomeIcon icon={faComment} /></a>
+        <a href="#blogs" ><FontAwesomeIcon icon={faBlog} /></a>
+      </nav>
     </div>
   )
 }

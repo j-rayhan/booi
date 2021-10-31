@@ -98,6 +98,24 @@
   z-index: 1000;
 }
 
+.bottomNavbar{
+  text-align: center;
+  background:var(--green);
+  position: fixed;
+  bottom:0; left:0; right:0;
+  z-index: 1000;
+  display: none;
+}
+
+.bottomNavbar a{
+  font-size: 2.5rem;
+  padding:2rem;
+  color:#fff;
+}
+
+.bottomNavbar a:hover{
+  background:var(--dark-color);
+}
 
 
 /* media queries  */
@@ -115,7 +133,9 @@
   .header .headerTwo{
       display:none;
   }
-
+  .bottomNavbar{
+    display: block;
+  }
   .searchBtn{
       display: inline-block;
   }
