@@ -117,6 +117,110 @@
   background:var(--dark-color);
 }
 
+.btn{
+  margin-top: 1rem;
+  display:inline-block;
+  padding:.9rem 3rem;
+  border-radius: .5rem;
+  color:#fff;
+  background:var(--green);
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover{
+  background:var(--dark-color);
+}
+
+.loginFormContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:rgba(255,255,255,.9);
+  position:fixed;
+  /* top:0; left: 0; */
+  top:0; right:-105%;
+  z-index: 10000;
+  height:100%;
+  width:100%;
+}
+
+.loginFormContainer.active{
+  right:0;
+}
+
+.loginFormContainer form{
+  background:#fff;
+  border:var(--border);
+  width:40rem;
+  padding:2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+  margin:2rem;
+}
+
+.loginFormContainer form h3{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color:var(--black);
+  text-align: center;
+}
+
+.loginFormContainer form span{
+  display: block;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.loginFormContainer form .box{
+  width: 100%;
+  margin:.7rem 0;
+  font-size: 1.6rem;
+  border:var(--border);
+  border-radius: .5rem;
+  padding:1rem 1.2rem;
+  color:var(--black);
+  text-transform: none;
+}
+
+.loginFormContainer form .checkbox{
+  display:flex;
+  align-items: center;
+  gap:.5rem;
+  padding:1rem 0;
+}
+
+.loginFormContainer form .checkbox label{
+  font-size: 1.5rem;
+  color:var(--light-color);
+  cursor: pointer;
+}
+
+.loginFormContainer form .btn{
+  text-align: center;
+  width:100%;
+  margin:1.5rem 0;
+}
+
+.loginFormContainer form p{
+  padding-top: .8rem;
+  color:var(--light-color);
+  font-size: 1.5rem;
+}
+
+.loginFormContainer form p a{
+  color:var(--green);
+  text-decoration: underline;
+}
+
+.loginFormContainer .close-login-btn{
+  position: absolute;
+  top:1.5rem; right:2.5rem;
+  font-size: 5rem;
+  color:var(--black);
+  cursor: pointer;
+}
 
 /* media queries  */
 
