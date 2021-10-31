@@ -1,16 +1,82 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root{
+  --green:#27ae60;
+  --dark-color:#219150;
+  --black:#444;
+  --light-color:#666;
+  --border:.1rem solid rgba(0,0,0,.1);
+  --border-hover:.1rem solid var(--black);
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
   box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:all .2s linear;
+  transition:width none;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background:var(--black);
+}
+
+section{
+  padding:5rem 9%;
+}
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+  html{
+      font-size: 55%;
+  }
+
+  .header .header-1{
+      padding:2rem;
+  }
+
+  section{
+      padding:3rem 2rem;
+  }
+
+}
+
+@media (max-width:768px){
+
+  html{
+      scroll-padding-top: 0;
+  }
+
+  body{
+      padding-bottom: 6rem;
+  }
+
+}
+
+@media (max-width:450px){
+
+  html{
+      font-size: 50%;
+  }
+
 }
