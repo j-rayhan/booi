@@ -222,6 +222,54 @@
   cursor: pointer;
 }
 
+.home{
+  background: url(../assets/image/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .row{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.home .row .content{
+  flex:1 1 39rem;
+}
+
+.home .row .books-slider{
+  flex:1 1 40rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.home .row .books-slider a img{
+  height: 25rem;
+}
+
+.home .row .books-slider a:hover img{
+  transform: scale(.9);
+}
+
+.home .row .books-slider .stand{
+  width:100%;
+  margin-top: -2rem;
+}
+
+.home .row .content h3{
+  color:var(--black);
+  font-size: 4.5rem;
+}
+
+.home .row .content p{
+  color:var(--light-color);
+  font-size: 1.4rem;
+  line-height: 2;
+  padding:1rem 0;
+}
+
 /* media queries  */
 
 @media (max-width:991px){
