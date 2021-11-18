@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { faHome, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
@@ -18,7 +18,28 @@ import styles from '../styles/Home.module.css'
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination]);
-
+const iconData = [
+    {
+      icon: faShippingFast,
+      title: "free shipping",
+      subtitle: "order over $100",
+    },
+    {
+      icon: faLock,
+      title: "secure payment",
+      subtitle: "100% secure payment",
+    },
+    {
+      icon: faRedoAlt,
+      title: "easy returns",
+      subtitle: "10 days returns",
+    },
+    {
+      icon: faHeadset,
+      title: "24/7 support",
+      subtitle: "call us anytime",
+    },
+  ]
 const Home: NextPage = () => {
   const [active, setActive] = React.useState<boolean>(false);
   const [searchFormVisible, setSearchFormVisible] = React.useState<boolean>(false);
@@ -166,6 +187,36 @@ const Home: NextPage = () => {
           </Swiper>
         </div>
       </section>
+
+      {/* icons section starts */}
+      <section className={styles["icons-container"]}>
+        {
+          iconData.map(({ icon, title, subtitle }) => (
+            <div key={title} className={styles["icons"]}>
+              <FontAwesomeIcon icon={icon} />
+              <div className={styles["content"]}>
+                <h3>{title}</h3>
+                <p>{subtitle}</p>
+              </div>
+            </div>
+          ))
+        }
+      </section>
+
+      {/* featured section starts */}
+
+      {/* newsletter section starts */}
+
+      {/* arrivals section starts */}
+
+      {/* deal section starts */}
+
+      {/* reviews section starts */}
+
+      {/* blogs section starts */}
+
+      {/* footer section starts */}
+      
     </div>
   )
 }
