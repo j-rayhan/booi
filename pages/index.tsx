@@ -189,11 +189,11 @@ const Home: NextPage = () => {
       </section>
 
       {/* icons section starts */}
-      <section className={styles["icons-container"]}>
+      <section className={styles["iconsContainer"]}>
         {
           iconData.map(({ icon, title, subtitle }) => (
             <div key={title} className={styles["icons"]}>
-              <FontAwesomeIcon icon={icon} />
+              <FontAwesomeIcon icon={icon} className={styles.fontIcon} />
               <div className={styles["content"]}>
                 <h3>{title}</h3>
                 <p>{subtitle}</p>
