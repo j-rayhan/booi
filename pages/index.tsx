@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
@@ -19,27 +19,31 @@ import styles from '../styles/Home.module.css'
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination]);
 const iconData = [
-    {
-      icon: faShippingFast,
-      title: "free shipping",
-      subtitle: "order over $100",
-    },
-    {
-      icon: faLock,
-      title: "secure payment",
-      subtitle: "100% secure payment",
-    },
-    {
-      icon: faRedoAlt,
-      title: "easy returns",
-      subtitle: "10 days returns",
-    },
-    {
-      icon: faHeadset,
-      title: "24/7 support",
-      subtitle: "call us anytime",
-    },
-  ]
+  {
+    icon: faShippingFast,
+    title: "free shipping",
+    subtitle: "order over $100",
+  },
+  {
+    icon: faLock,
+    title: "secure payment",
+    subtitle: "100% secure payment",
+  },
+  {
+    icon: faRedoAlt,
+    title: "easy returns",
+    subtitle: "10 days returns",
+  },
+  {
+    icon: faHeadset,
+    title: "24/7 support",
+    subtitle: "call us anytime",
+  },
+]
+
+const featuredList = Array.from({ length: 9 }, (v, k) => k + 1)
+// [1, 2, 3,......,9]
+
 const Home: NextPage = () => {
   const [active, setActive] = React.useState<boolean>(false);
   const [searchFormVisible, setSearchFormVisible] = React.useState<boolean>(false);
@@ -205,6 +209,204 @@ const Home: NextPage = () => {
 
       {/* featured section starts */}
 
+      <section className={styles.featured} id="featured">
+
+        <h1 className={styles.heading}> <span>featured books</span> </h1>
+
+        <div className={`${styles.swiper} ${styles.featuredSlider}`}>
+
+          <div className={styles.swiperWrapper}>
+
+            {
+              featuredList.map((v) => (
+                <div key={v} className={`${styles.swiperSlide} ${styles.box}`}>
+                  <div className={styles.icons}>
+                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon={faHeart} />
+                    <FontAwesomeIcon icon={faEye} />
+                  </div>
+                  <div className={styles.image}>
+                    <Image src={`book_${v}`} width={150} height={180} alt="" />
+                  </div>
+                  <div className={styles.content}>
+                    <h3>featured books</h3>
+                    <div className={styles.price}>$15.99 <span>$20.99</span></div>
+                    <a href="#" className={styles.btn}>add to cart</a>
+                  </div>
+                </div>
+              ))
+            }
+
+            {/* <div className={`${styles.swiperSlide} ${styles.box}`}>
+              <div className={styles.icons}>
+                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faHeart} />
+                <FontAwesomeIcon icon={faEye} />
+              </div>
+              <div className={styles.image}>
+                <Image src={book_1} width={150} height={180} alt="" />
+              </div>
+              <div className={styles.content}>
+                <h3>featured books</h3>
+                <div className={styles.price}>$15.99 <span>$20.99</span></div>
+                <a href="#" className={styles.btn}>add to cart</a>
+              </div>
+            </div> */}
+
+            {/* //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-2.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-3.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-4.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-5.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-6.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-7.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-8.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-9.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+          //   <div class="swiper-slide box">
+          //     <div class="icons">
+          //       <a href="#" class="fas fa-search"></a>
+          //       <a href="#" class="fas fa-heart"></a>
+          //       <a href="#" class="fas fa-eye"></a>
+          //     </div>
+          //     <div class="image">
+          //       <img src="image/book-10.png" alt="">
+          //     </div>
+          //     <div class="content">
+          //       <h3>featured books</h3>
+          //       <div class="price">$15.99 <span>$20.99</span></div>
+          //       <a href="#" class="btn">add to cart</a>
+          //     </div>
+          //   </div>
+
+        */}
+          </div>
+
+          {/* <div class="swiper-button-next"></div>
+           <div class="swiper-button-prev"></div> */}
+
+        </div>
+
+      </section>
+
       {/* newsletter section starts */}
 
       {/* arrivals section starts */}
@@ -216,7 +418,7 @@ const Home: NextPage = () => {
       {/* blogs section starts */}
 
       {/* footer section starts */}
-      
+
     </div>
   )
 }
