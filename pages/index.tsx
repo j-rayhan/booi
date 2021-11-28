@@ -13,6 +13,9 @@ import book_3 from '../assets/image/book-3.png'
 import book_4 from '../assets/image/book-4.png'
 import book_5 from '../assets/image/book-5.png'
 import book_6 from '../assets/image/book-6.png'
+import book_7 from '../assets/image/book-4.png'
+import book_8 from '../assets/image/book-5.png'
+import book_9 from '../assets/image/book-6.png'
 import stand from '../assets/image/stand.png'
 import styles from '../styles/Home.module.css'
 
@@ -41,7 +44,17 @@ const iconData = [
   },
 ]
 
-const featuredList = Array.from({ length: 9 }, (v, k) => k + 1)
+const featuredList = [
+  {image: book_1},
+  {image: book_2},
+  {image: book_3},
+  {image: book_4},
+  {image: book_5},
+  {image: book_6},
+  {image: book_7},
+  {image: book_8},
+  {image: book_9},
+]
 // [1, 2, 3,......,9]
 
 const Home: NextPage = () => {
@@ -218,15 +231,15 @@ const Home: NextPage = () => {
           <div className={styles.swiperWrapper}>
 
             {
-              featuredList.map((v) => (
-                <div key={v} className={`${styles.swiperSlide} ${styles.box}`}>
+              featuredList.map(({image}, index) => (
+                <div key={index} className={`${styles.box}`}>
                   <div className={styles.icons}>
-                    <FontAwesomeIcon icon={faSearch} />
-                    <FontAwesomeIcon icon={faHeart} />
-                    <FontAwesomeIcon icon={faEye} />
+                    <a href="#"> <FontAwesomeIcon icon={faSearch} /></a>
+                    <a href="#"> <FontAwesomeIcon icon={faHeart} /></a>
+                    <a href="#"> <FontAwesomeIcon icon={faEye} /></a>
                   </div>
                   <div className={styles.image}>
-                    <Image src={`book_${v}`} width={150} height={180} alt="" />
+                    <Image src={image} alt="" />
                   </div>
                   <div className={styles.content}>
                     <h3>featured books</h3>
