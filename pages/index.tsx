@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser, faEye, faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
@@ -281,7 +281,32 @@ const Home: NextPage = () => {
 
       </section>
       {/* arrivals section starts */}
+      <section className={styles.arrivals} id="arrivals">
 
+        <h1 className={styles.heading}> <span>new arrivals</span> </h1>
+
+        <div className={styles.arrivalsSlider}>
+
+          {/* <div class="swiper-wrapper"> */}
+
+          <a href="#" className={styles.box}>
+            <div className={styles.image}>
+              <Image src={book_1} alt="" />
+            </div>
+            <div className={styles.content}>
+              <h3>new arrivals</h3>
+              <div className={styles.price}>$15.99 <span>$20.99</span></div>
+              <div className={styles.stars}>
+                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                <FontAwesomeIcon icon={faStarHalfAlt} className={styles.fontIcon} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
       {/* deal section starts */}
 
       {/* reviews section starts */}

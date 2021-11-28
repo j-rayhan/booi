@@ -347,7 +347,7 @@
 }
 
 .featured .featuredSlider .box .image img{
-  height: 25rem;
+  height: 25rem !important;
 }
 
 .featured .featuredSlider .box .icons{
@@ -427,6 +427,45 @@
   color:var(--black);
   border-radius: .5rem;
   text-transform: none;
+}
+
+.arrivals .arrivalsSlider .box{
+  display: flex;
+  align-items:center;
+  gap:1.5rem;
+  padding:2rem 1rem;
+  border:var(--border);
+  margin:1rem 0;
+}
+
+.arrivals .arrivalsSlider .box:hover{
+  border:var(--border-hover);
+}
+
+.arrivals .arrivalsSlider .box .image img{
+  height:15rem !important;
+}
+
+.arrivals .arrivalsSlider .box .content h3{
+  font-size: 2rem;
+  color:var(--black);
+}
+
+.arrivals .arrivalsSlider .box .content .price{
+  font-size: 2.2rem;
+  color:var(--black);
+  padding-bottom: .5rem;
+}
+
+.arrivals .arrivalsSlider .box .content .price span{
+  font-size: 1.5rem;
+  color:var(--light-color);
+  text-decoration: line-through;
+}
+
+.arrivals .arrivalsSlider .box .content .stars .fontIcon{
+  font-size: 1.5rem;
+  color:var(--green);
 }
 
 /* media queries  */
