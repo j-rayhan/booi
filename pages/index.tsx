@@ -5,7 +5,7 @@ import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 //
 import book_1 from '../assets/image/book-1.png'
 import book_2 from '../assets/image/book-2.png'
@@ -20,7 +20,7 @@ import stand from '../assets/image/stand.png'
 import styles from '../styles/Home.module.css'
 
 // install Swiper modules
-SwiperCore.use([Autoplay, Pagination]);
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 const iconData = [
   {
     icon: faShippingFast,
@@ -226,13 +226,35 @@ const Home: NextPage = () => {
 
         <h1 className={styles.heading}> <span>featured books</span> </h1>
 
-        <div className={`${styles.swiper} ${styles.featuredSlider}`}>
+        <Swiper
+            spaceBetween={10}
+            loop
+            centeredSlides
+            autoplay={{
+              delay: 9500,
+              disableOnInteraction: false
+            }}
+            navigation
+            breakpoints={{
+              "0": {
+                "slidesPerView": 1,
+              },
+              "450": {
+                "slidesPerView": 2,
+              },
+              "768": {
+                "slidesPerView": 3,
+              },
+              "1024": {
+                "slidesPerView": 4,
+              }
+            }}  className={`${styles.featuredSlider}`}>
 
-          <div className={styles.swiperWrapper}>
+          {/* <div className={styles.swiperWrapper}> */}
 
             {
               featuredList.map(({image}, index) => (
-                <div key={index} className={`${styles.box}`}>
+                <SwiperSlide key={index} className={`${styles.box}`}>
                   <div className={styles.icons}>
                     <a href="#"> <FontAwesomeIcon icon={faSearch} /></a>
                     <a href="#"> <FontAwesomeIcon icon={faHeart} /></a>
@@ -246,7 +268,7 @@ const Home: NextPage = () => {
                     <div className={styles.price}>$15.99 <span>$20.99</span></div>
                     <a href="#" className={styles.btn}>add to cart</a>
                   </div>
-                </div>
+                </SwiperSlide>
               ))
             }
 
@@ -411,13 +433,7 @@ const Home: NextPage = () => {
           //   </div>
 
         */}
-          </div>
-
-          {/* <div class="swiper-button-next"></div>
-           <div class="swiper-button-prev"></div> */}
-
-        </div>
-
+          </Swiper>
       </section>
 
       {/* newsletter section starts */}
