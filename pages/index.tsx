@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser, faEye, faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShippingFast, faLock, faRedoAlt, faHeadset, faList, faTimes, faTags, faComments, faBlog, faSearch, faBook, faHeart, faShoppingCart, faUser, faEye, faStar, faStarHalfAlt, faMapMarkerAlt, faArrowRight, faPhone, faEnvelope, faBookOpen, faWater } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
@@ -31,6 +31,8 @@ import blog_2 from '../assets/image/blog-2.jpg'
 import blog_3 from '../assets/image/blog-3.jpg'
 import blog_4 from '../assets/image/blog-4.jpg'
 import blog_5 from '../assets/image/blog-5.jpg'
+
+import worldmap from '../assets/image/worldmap.png'
 
 import styles from '../styles/Home.module.css'
 
@@ -455,6 +457,60 @@ const Home: NextPage = () => {
       </section>
 
       {/* footer section starts */}
+
+      <section className={styles.footer}>
+
+        <div className={styles.boxContainer}>
+
+          <div className={styles.box}>
+            <h3>our locations</h3>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> india </a>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> USA </a>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> russia </a>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> france </a>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> japan </a>
+            <a href="#"> <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.fontIcon} /> africa </a>
+          </div>
+
+          <div className={styles.box}>
+            <h3>quick links</h3>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> home </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> featured </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> arrivals </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> reviews </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> blogs </a>
+          </div>
+
+          <div className={styles.box}>
+            <h3>extra links</h3>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> account info </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> ordered items </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> privacy policy </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> payment method </a>
+            <a href="#"> <FontAwesomeIcon icon={faArrowRight} className={styles.fontIcon} /> our serivces </a>
+          </div>
+
+          <div className={styles.box}>
+            <h3>contact info</h3>
+            <a href="#"> <FontAwesomeIcon icon={faPhone} className={styles.fontIcon} /> +123-456-7890 </a>
+            <a href="#"> <FontAwesomeIcon icon={faPhone} className={styles.fontIcon} /> +111-222-3333 </a>
+            <a href="#"> <FontAwesomeIcon icon={faEnvelope} className={styles.fontIcon} /> shaikhanas@gmail.com </a>
+            <Image src={worldmap} className={styles.map} alt="" />
+          </div>
+
+        </div>
+
+        <div className={styles.share}>
+          <a href="#"><FontAwesomeIcon icon={faBookOpen} className={styles.fontIcon} /></a>
+          <a href="#"><FontAwesomeIcon icon={faWater} className={styles.fontIcon} /></a>
+          <a href="#"><FontAwesomeIcon icon={faEnvelope} className={styles.fontIcon} /></a>
+          <a href="#"><FontAwesomeIcon icon={faEnvelope} className={styles.fontIcon} /></a>
+          <a href="#"><FontAwesomeIcon icon={faEnvelope} className={styles.fontIcon} /></a>
+        </div>
+
+        <div className={styles.credit}> created by <span>mr. jahir</span> | all rights reserved! </div>
+
+      </section>
 
     </div>
   )
