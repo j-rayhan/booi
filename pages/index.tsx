@@ -45,15 +45,15 @@ const iconData = [
 ]
 
 const featuredList = [
-  {image: book_1},
-  {image: book_2},
-  {image: book_3},
-  {image: book_4},
-  {image: book_5},
-  {image: book_6},
-  {image: book_7},
-  {image: book_8},
-  {image: book_9},
+  { image: book_1 },
+  { image: book_2 },
+  { image: book_3 },
+  { image: book_4 },
+  { image: book_5 },
+  { image: book_6 },
+  { image: book_7 },
+  { image: book_8 },
+  { image: book_9 },
 ]
 // [1, 2, 3,......,9]
 
@@ -225,48 +225,48 @@ const Home: NextPage = () => {
 
         <h1 className={styles.heading}> <span>featured books</span> </h1>
         <Swiper
-            spaceBetween={10}
-            loop
-            centeredSlides
-            autoplay={{
-              delay: 9500,
-              disableOnInteraction: false
-            }}
-            navigation
-            breakpoints={{
-              "0": {
-                "slidesPerView": 1,
-              },
-              "450": {
-                "slidesPerView": 2,
-              },
-              "768": {
-                "slidesPerView": 3,
-              },
-              "1024": {
-                "slidesPerView": 4,
-              }
-            }}  className={`${styles.featuredSlider}`}>
-            {
-              featuredList.map(({image}, index) => (
-                <SwiperSlide key={index} className={`${styles.box}`}>
-                  <div className={styles.icons}>
-                    <a href="#"> <FontAwesomeIcon icon={faSearch} /></a>
-                    <a href="#"> <FontAwesomeIcon icon={faHeart} /></a>
-                    <a href="#"> <FontAwesomeIcon icon={faEye} /></a>
-                  </div>
-                  <div className={styles.image}>
-                    <Image src={image} alt="" />
-                  </div>
-                  <div className={styles.content}>
-                    <h3>featured books</h3>
-                    <div className={styles.price}>$15.99 <span>$20.99</span></div>
-                    <a href="#" className={styles.btn}>add to cart</a>
-                  </div>
-                </SwiperSlide>
-              ))
+          spaceBetween={10}
+          loop
+          centeredSlides
+          autoplay={{
+            delay: 9500,
+            disableOnInteraction: false
+          }}
+          navigation
+          breakpoints={{
+            "0": {
+              "slidesPerView": 1,
+            },
+            "450": {
+              "slidesPerView": 2,
+            },
+            "768": {
+              "slidesPerView": 3,
+            },
+            "1024": {
+              "slidesPerView": 4,
             }
-          </Swiper>
+          }} className={`${styles.featuredSlider}`}>
+          {
+            featuredList.map(({ image }, index) => (
+              <SwiperSlide key={index} className={`${styles.box}`}>
+                <div className={styles.icons}>
+                  <a href="#"> <FontAwesomeIcon icon={faSearch} /></a>
+                  <a href="#"> <FontAwesomeIcon icon={faHeart} /></a>
+                  <a href="#"> <FontAwesomeIcon icon={faEye} /></a>
+                </div>
+                <div className={styles.image}>
+                  <Image src={image} alt="" />
+                </div>
+                <div className={styles.content}>
+                  <h3>featured books</h3>
+                  <div className={styles.price}>$15.99 <span>$20.99</span></div>
+                  <a href="#" className={styles.btn}>add to cart</a>
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </section>
 
       {/* newsletter section starts */}
@@ -285,27 +285,47 @@ const Home: NextPage = () => {
 
         <h1 className={styles.heading}> <span>new arrivals</span> </h1>
 
-        <div className={styles.arrivalsSlider}>
-
-          {/* <div class="swiper-wrapper"> */}
-
-          <a href="#" className={styles.box}>
-            <div className={styles.image}>
-              <Image src={book_1} alt="" />
-            </div>
-            <div className={styles.content}>
-              <h3>new arrivals</h3>
-              <div className={styles.price}>$15.99 <span>$20.99</span></div>
-              <div className={styles.stars}>
-                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
-                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
-                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
-                <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
-                <FontAwesomeIcon icon={faStarHalfAlt} className={styles.fontIcon} />
-              </div>
-            </div>
-          </a>
-        </div>
+        <Swiper
+          spaceBetween={10}
+          loop
+          centeredSlides
+          autoplay={{
+            delay: 9500,
+            disableOnInteraction: false
+          }}
+          navigation
+          breakpoints={{
+            "0": {
+              "slidesPerView": 1,
+            },
+            "768": {
+              "slidesPerView": 2,
+            },
+            "1024": {
+              "slidesPerView": 3,
+            }
+          }} className={styles.arrivalsSlider}>
+          {
+            featuredList.map(({ image }, index) => (
+              <SwiperSlide key={index} className={styles.box}>
+                <div className={styles.image}>
+                  <Image src={image} alt="" />
+                </div>
+                <div className={styles.content}>
+                  <h3>new arrivals</h3>
+                  <div className={styles.price}>$15.99 <span>$20.99</span></div>
+                  <div className={styles.stars}>
+                    <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                    <FontAwesomeIcon icon={faStarHalfAlt} className={styles.fontIcon} />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </section>
       {/* deal section starts */}
 
