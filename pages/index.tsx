@@ -25,6 +25,13 @@ import pic_3 from '../assets/image/pic-3.png'
 import pic_4 from '../assets/image/pic-4.png'
 import pic_5 from '../assets/image/pic-5.png'
 import pic_6 from '../assets/image/pic-6.png'
+
+import blog_1 from '../assets/image/blog-1.jpg'
+import blog_2 from '../assets/image/blog-2.jpg'
+import blog_3 from '../assets/image/blog-3.jpg'
+import blog_4 from '../assets/image/blog-4.jpg'
+import blog_5 from '../assets/image/blog-5.jpg'
+
 import styles from '../styles/Home.module.css'
 
 // install Swiper modules
@@ -70,6 +77,14 @@ const reviewList = [
   { image: pic_4, name: 'Biba' },
   { image: pic_5, name: 'Mr. Tome' },
   { image: pic_6, name: 'Katy' },
+]
+
+const blogList = [
+  { image: blog_1 },
+  { image: blog_2 },
+  { image: blog_3 },
+  { image: blog_4 },
+  { image: blog_5 },
 ]
 // [1, 2, 3,......,9]
 
@@ -400,6 +415,44 @@ const Home: NextPage = () => {
       </section>
 
       {/* blogs section starts */}
+
+      <section className={styles.blogs} id="blogs">
+        <h1 className={styles.heading}> <span>our blogs</span> </h1>
+        <Swiper
+          spaceBetween={10}
+          loop
+          grabCursor
+          autoplay={{
+            delay: 9500,
+            disableOnInteraction: false
+          }}
+          breakpoints={{
+            "0": {
+              "slidesPerView": 1,
+            },
+            "768": {
+              "slidesPerView": 2,
+            },
+            "1024": {
+              "slidesPerView": 3,
+            }
+          }} className={styles.blogsSlider}>
+          {
+            blogList.map(({ image }, index) => (
+              <SwiperSlide key={index} className={styles.box}>
+                <div className={styles.image}>
+                  <Image src={image} alt="" />
+                </div>
+                <div className={styles.content}>
+                  <h3>blog title goes here</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
+                  <a href="#" className={styles.btn}>read more</a>
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
+      </section>
 
       {/* footer section starts */}
 
