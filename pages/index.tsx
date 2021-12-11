@@ -377,7 +377,7 @@ const Home: NextPage = () => {
       </section>
       {/* reviews section starts */}
       <section className={styles.reviews} id="reviews">
-        <h1 className={styles.heading}> <span>client's reviews</span> </h1>
+        <h1 className={styles.heading}> <span>client&apos;s reviews</span> </h1>
         <Swiper
           spaceBetween={10}
           loop
