@@ -18,6 +18,13 @@ import book_8 from '../assets/image/book-5.png'
 import book_9 from '../assets/image/book-6.png'
 import deal_img from '../assets/image/deal-img.jpg'
 import stand from '../assets/image/stand.png'
+
+import pic_1 from '../assets/image/pic-1.png'
+import pic_2 from '../assets/image/pic-2.png'
+import pic_3 from '../assets/image/pic-3.png'
+import pic_4 from '../assets/image/pic-4.png'
+import pic_5 from '../assets/image/pic-5.png'
+import pic_6 from '../assets/image/pic-6.png'
 import styles from '../styles/Home.module.css'
 
 // install Swiper modules
@@ -55,6 +62,14 @@ const featuredList = [
   { image: book_7 },
   { image: book_8 },
   { image: book_9 },
+]
+const reviewList = [
+  { image: pic_1, name: 'Joly' },
+  { image: pic_2, name: 'Koya' },
+  { image: pic_3, name: 'Mr. MM' },
+  { image: pic_4, name: 'Biba' },
+  { image: pic_5, name: 'Mr. Tome' },
+  { image: pic_6, name: 'Katy' },
 ]
 // [1, 2, 3,......,9]
 
@@ -329,7 +344,6 @@ const Home: NextPage = () => {
         </Swiper>
       </section>
       {/* deal section starts */}
-
       <section className={styles.deal}>
 
         <div className={styles.content}>
@@ -345,6 +359,45 @@ const Home: NextPage = () => {
 
       </section>
       {/* reviews section starts */}
+      <section className={styles.reviews} id="reviews">
+        <h1 className={styles.heading}> <span>client's reviews</span> </h1>
+        <Swiper
+          spaceBetween={10}
+          loop
+          grabCursor
+          autoplay={{
+            delay: 9500,
+            disableOnInteraction: false
+          }}
+          breakpoints={{
+            "0": {
+              "slidesPerView": 1,
+            },
+            "768": {
+              "slidesPerView": 2,
+            },
+            "1024": {
+              "slidesPerView": 3,
+            }
+          }} className={styles.reviewsSlider}>
+          {
+            reviewList.map(({ image, name }, index) => (
+              <SwiperSlide key={index} className={styles.box}>
+                <Image src={image} alt="" />
+                <h3>{name}</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nihil ipsa placeat. Aperiam at sint, eos ex similique facere hic.</p>
+                <div className={styles.stars}>
+                  <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                  <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                  <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                  <FontAwesomeIcon icon={faStar} className={styles.fontIcon} />
+                  <FontAwesomeIcon icon={faStarHalfAlt} className={styles.fontIcon} />
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
+      </section>
 
       {/* blogs section starts */}
 
