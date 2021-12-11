@@ -16,6 +16,7 @@ import book_6 from '../assets/image/book-6.png'
 import book_7 from '../assets/image/book-4.png'
 import book_8 from '../assets/image/book-5.png'
 import book_9 from '../assets/image/book-6.png'
+import deal_img from '../assets/image/deal-img.jpg'
 import stand from '../assets/image/stand.png'
 import styles from '../styles/Home.module.css'
 
@@ -329,6 +330,20 @@ const Home: NextPage = () => {
       </section>
       {/* deal section starts */}
 
+      <section className={styles.deal}>
+
+        <div className={styles.content}>
+          <h3>deal of the day</h3>
+          <h1>upto 50% off</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora quaerat at fuga dolorum natus velit.</p>
+          <a href="#" className={styles.btn}>shop now</a>
+        </div>
+
+        <div className={styles.image}>
+          <Image src={deal_img} alt="" />
+        </div>
+
+      </section>
       {/* reviews section starts */}
 
       {/* blogs section starts */}
