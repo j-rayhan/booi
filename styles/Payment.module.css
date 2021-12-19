@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40%);
+  padding-bottom: 70px;
+}
+.container .paymentForm {
+  padding: 1.5rem;
+  width: 700px;
+  background: #FFFFFF;
+  box-shadow: 0 5 10 rgba(0, 0, 0, 0.1);
+}
+.container .paymentForm .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.container .paymentForm .row .col {
+  flex: 1 1 250px;
+}
+.container .paymentForm .row .col .title {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #333333;
+  padding-bottom: 5px;
+}
+.container .paymentForm .row .col .inputBox {
+  margin: 0.9em 0;
+}
+.container .paymentForm .row .col .inputBox span{
+  margin-bottom: 5px;
+  display: block ;
+  font-size: small;
+}
+.container .paymentForm .row .col .inputBox input{
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.container .paymentForm .row .col .inputBox input:focus{
+  border: 1px solid #000000;
+}
+.container .paymentForm .row .col .flex {
+  display: flex;
+  gap: 1em;
+}
+.container .paymentForm .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+.container .paymentForm .row .col .inputBox .image {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000000);
+}
+.container .paymentForm .submitBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #27ae60;
+  color: #FFFFFF;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.container .paymentForm .submitBtn:hover {
+  background-color: #2ecc71;
+}
