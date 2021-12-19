@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40%);
+  padding-bottom: 70px;
+}
+.container .loginForm {
+  padding: 1.5rem;
+  width: 600px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.container .loginForm .links {
+  background-color: #FAF0F3;
+  padding: 20px 15px;
+}
+.container .loginForm .title {
+  padding-bottom: 10px;
+  font-size: 17px;
+  color: #666666;
+}
+.container .loginForm .links .buttons .btn {
+  font-size: 17px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 30px;
+  color: #666666;
+  display: inline-block;
+  border:1px solid rgba(0, 0, 0, 0.1);
+  /* background: var(--light-blue); */
+  background: #ecf4f9; 
+}
+.container .loginForm .links .buttons .btn:hover {
+ color: #FFFFFF;
+ background: #2ecc71;
+}
+.container .loginForm .links .buttons .btn .faIcon {
+  color: #333333;
+  padding-right: 5px;
+}
+.container .loginForm .links .buttons .btn:hover .faIcon {
+  color: #FFFFFF;
+}
+.container .loginForm .inputBox {
+  /* background: #ecf4f9;  */
+  background: var(--light-blue);
+  padding: 20px;
+}
+.container .loginForm .inputBox .input{
+  width: 100%;
+  height: 50px;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container .loginForm .inputBox .input input{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #333333;
+  text-transform: none;
+}
+.container .loginForm .inputBox .input span{
+  font-size: 20px;
+  color: #999999;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+.container .loginForm .checkbox {
+  text-align: left;
+  padding: 10px 0;
+}
+.container .loginForm .checkbox label{
+  font-size: 17px;
+  color: #333333;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.container .loginForm .submitBtn {
+  font-size: 17px;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: #2ecc71;
+  padding: 10px 40px;
+  margin-top: 10px;
+  transition: .2s linear;
+}
+
+.container .loginForm .submitBtn:hover{
+  letter-spacing: 1px;
+}

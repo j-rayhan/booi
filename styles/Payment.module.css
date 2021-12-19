@@ -11,7 +11,7 @@
   padding: 1.5rem;
   width: 700px;
   background: #FFFFFF;
-  box-shadow: 0 5 10 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .container .paymentForm .row {
   display: flex;
